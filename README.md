@@ -65,3 +65,5 @@ Things you may want to cover:
 ### Association
 - belongs_to :group
 - belongs_to :user
+- has_many :groups
+- has_many :users
