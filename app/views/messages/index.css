@@ -1,0 +1,47 @@
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.chat-side{
+  width:300px;
+  height:100%;
+  position:fixed;
+  background-color:#2f3e51;
+}
+
+.side-header{
+  background: #253141;
+  height: 15%;   /* 適当な値！あとで計算だすこと */
+
+
+
+
+}
+.side-header__box{
+
+
+
+}
+.groups{
+  height: 85%; /* 適当な値！あとで計算だすこと */
+  background-color: #2f3e51
+
+
+
+}
+.group{
+
+
+
+}
+.group__group-name{
+
+
+
+}
+.group__latest-message{
+
+
+}
