@@ -7,6 +7,12 @@
   color: white;
   float: left;
 }
+a{
+  text-decoration: none;
+  color: white;
+
+}
+
 
 .side-header{
   background-color: #253141;
@@ -21,9 +27,15 @@
     font-weight: bold;
     &__menu{
       display: flex;
-      float: right;
+      &__new-group:hover{
+        margin-left: 0.3rem;
+        text-decoration: none;
+      }
+      &__new-edit-user{
+        margin-left: 0.3rem;
+      }
     }
-  }
+    }
 }
 
 .groups{
@@ -37,12 +49,13 @@
   margin-bottom: 40px;
   &__group-name{
     font-size: 15px;
-    margin-bottom: 5px;}
+    margin-bottom: 5px;
+    text-decoration: none;
+  }
   &__latest-message{
     font-size: 11px;
   }
 }
-
 
 .chat-main{
   width: calc(100vw - 300px);
