@@ -1,14 +1,17 @@
-  .chat-side
-    .side-header
-      .side-header__box
-        %p.side-header__box__user-name hiroshi
-        %ul.side-header__box__menu
-          %li.side-header__box__menu__new-group
+.chat-side
+  .side-header
+    .side-header__box
+      %p.side-header__box__user-name
+        = current_user.name
+      %ul.side-header__box__menu
+        %li.side-header__box__menu__new-group
+          = link_to "https://chat-space-sample.herokuapp.com/"  do
             %i.fa.fa-edit
-          %li.side-header__box__menu__edit-user
+        %li.side-header__box__menu__new-edit-user
+          = link_to "https://chat-space-sample.herokuapp.com/"  do
             %i.fa.fa-cog
-    .groups
-      = link_to "https://chat-space-sample.herokuapp.com/groups/1037/messages" do
+  .groups
+    = link_to "https://chat-space-sample.herokuapp.com/groups/1037/messages"  do
       .group
         %p.group__group-name aooni
         %p.group__latest-message まだメッセージがありません
