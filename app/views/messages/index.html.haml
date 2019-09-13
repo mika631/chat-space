@@ -7,7 +7,7 @@
           = link_to "https://chat-space-sample.herokuapp.com/"  do
             %i.fa.fa-edit
         %li.side-header__box__menu__new-edit-user
-          = link_to "https://chat-space-sample.herokuapp.com/"  do
+          = link_to edit_user_path(current_user)  do
             %i.fa.fa-cog
   .groups
     = link_to "https://chat-space-sample.herokuapp.com/groups/1037/messages"  do
