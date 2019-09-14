@@ -14,7 +14,7 @@ class UsersController < ApplicationController
   private
   
   # form_forを使用
-  def user(params)  
-    params.reqire(:user).permit(:name, :email)
+  def user_params
+    params.require(:user).permit(:name, :email)
   end
 end
