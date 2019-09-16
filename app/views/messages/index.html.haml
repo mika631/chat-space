@@ -1,28 +1,76 @@
 .wrapper
 
   = render 'shared/side_bar'
-  
-  .chat-main
-    .main-header
-      .main-header__left-box
-        %h2.main-header__left-box__current-group aooni
-        %ul.main-header__left-box__member-list
-          Member:
-          %li.main-header__left-box__member-list__member mika
-          %li.main-header__left-box__member-list__member nike
-      = link_to "/groups/1137/edit" do
-        .main-header__edit-btn Edit
+
+  .chat
+    .header
+      .left-header
+        .left-header__title
+          グループ名
+        %ul.left-header__members
+          Member：
+          %li.member
+            メンバー名
+          %li.member
+            メンバー名
+          %li.member
+            メンバー名
+      .right-header
+        .right-header__button
+          Edit
+
     .messages
-      .message
-        .message__update-info
-          %p.message__update-info__talker takeshi
-          %p.message__update-info__date 2019/09/09(fri)00:11:11
-        %p.message__text buruburu
+      = render @messages
+
     .form
-      .form__new-message
-        .input-box
-          %input#message_content.input-box__text{name: "message[content]", placeholder: "type a message", type: "text"}/
-          %label.input-box__image{for: "message_image"} 
-            %i.fa.fa-image
-          %label#input#message_image.input-box__image__file{name: "message[image]", type: "file"}/
-        %input.submit-btn{"data-disable-with": "Send", name: "commit", type: "submit", value: "Send"}/
+      = form_for [@group, @message] do |f|
+        = f.text_field :content, class: 'form__message', placeholder: 'type a message'
+        .form__mask
+          = f.label :image, class: 'form__mask__image' do
+            = fa_icon 'picture-o', class: 'icon'
+            = f.file_field :image, class: 'hidden'
+        = f.submit 'Send', class: 'form__submit'
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+-# .wrapper
+
+-#   = render 'shared/side_bar'
+  
+-#   .chat-main
+-#     .main-header
+-#       .main-header__left-box
+-#         %h2.main-header__left-box__current-group aooni
+-#         %ul.main-header__left-box__member-list
+-#           Member:
+-#           %li.main-header__left-box__member-list__member mika
+-#           %li.main-header__left-box__member-list__member nike
+-#       = link_to "/groups/1137/edit" do
+-#         .main-header__edit-btn Edit
+-#     .messages
+-#       = render @messages
+-#       -# .message
+-#       -#   .message__update-info
+-#       -#     %p.message__update-info__talker takeshi
+-#       -#     %p.message__update-info__date 2019/09/09(fri)00:11:11
+-#       -#   %p.message__text buruburu
+-#     .form
+-#       = form_for [@group, @message] do |f|
+-#         = f.text_field :content, class: 'form__message', placeholder: 'type a message'
+-#         .form__mask
+-#           = f.label :image, class: 'form__mask__image' do
+-#             = fa_icon 'picture-o', class: 'icon'
+-#             = f.file_field :image, class: 'hidden'
+-#         = f.submit 'Send', class: 'form__submit'

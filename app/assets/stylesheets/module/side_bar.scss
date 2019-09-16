@@ -1,58 +1,106 @@
-* {
+.side-bar {
   box-sizing: border-box;
-}
-
-.chat-side{
+  color: $white;
   width: 300px;
-  color: white;
-  float: left;
+  .header {
+    background-color: $side_blue_dark;
+    height: 100px;
+    line-height: 100px;
+    padding: 0 20px;
+    &__name {
+      display: inline-block;
+      font-size: $side_header_font;
+      font-weight: bold;
+    }
+    &__lists {
+      display: inline-block;
+      float: right;
+      .list {
+        display: inline-block;
+      }
+      .icon {
+        color: $white;
+        font-size: $side_header_font;
+      }
+    }
+  }
+  .groups {
+    background-color: $side_blue_light;
+    height: calc(100vh - 100px);
+    padding: 0 20px;
+    .group {
+      box-sizing: border-box;
+      padding: 20px 0 40px;
+      &__name {
+        font-size: $side_group_name;
+      }
+      &__message {
+        font-size: $side_group_message;
+        margin-top: 5px;
+      }
+    }
+  }
 }
 a{
-  text-decoration: none;
-  color: white;
-
-}
-
-
-.side-header{
-  background-color: #253141;
-  height: 100px;
-  display: flex;
-  align-items: center;
-  padding: 0 20px;
-  &__box{
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
-    font-weight: bold;
-    &__menu{
-      display: flex;
-      &__new-group:hover{
-        margin-left: 0.3rem;
-        text-decoration: none;
-      }
-      &__new-edit-user{
-        margin-left: 0.3rem;
-      }
-    }
-    }
-}
-
-.groups{
-  height: calc(100vh - 100px);
-  background-color: #2f3e51;
-  padding: 20px 20px 0;
-  overflow: scroll;
-}
-
-.group{
-  margin-bottom: 40px;
-  &__group-name{
-    font-size: 15px;
-    margin-bottom: 5px;
     text-decoration: none;
+    color: white;
+  
   }
-  &__latest-message{
-    font-size: 11px;
-  }
-}
+
+// * {
+//   box-sizing: border-box;
+// }
+
+// .chat-side{
+//   width: 300px;
+//   color: white;
+//   float: left;
+// }
+// a{
+//   text-decoration: none;
+//   color: white;
+
+// }
+
+
+// .side-header{
+//   background-color: #253141;
+//   height: 100px;
+//   display: flex;
+//   align-items: center;
+//   padding: 0 20px;
+//   &__box{
+//     display: flex;
+//     justify-content: space-between;
+//     width: 100%;
+//     font-weight: bold;
+//     &__menu{
+//       display: flex;
+//       &__new-group:hover{
+//         margin-left: 0.3rem;
+//         text-decoration: none;
+//       }
+//       &__new-edit-user{
+//         margin-left: 0.3rem;
+//       }
+//     }
+//   }
+
+
+//   .groups {
+//     background-color: $side_blue_light;
+//     height: calc(100vh - 100px);
+//     padding: 0 20px;
+//     .group {
+//       box-sizing: border-box;
+//       padding: 20px 0 40px;
+//       &__name {
+//         font-size: $side_group_name;
+//       }
+//       &__message {
+//         font-size: $side_group_message;
+//         margin-top: 5px;
+//       }
+//     }
+//   }
+// }
