@@ -32,32 +32,3 @@
 
 
 
--# 削除すること
--# .chat-side
--#   .side-header
--#     .side-header__box
--#       %p.side-header__box__user-name
--#         = current_user.name
--#       %ul.side-header__box__menu
--#         %li.side-header__box__menu__new-group
--#           = link_to "https://chat-space-sample.herokuapp.com/"  do
--#             %i.fa.fa-edit
--#         %li.side-header__box__menu__new-edit-user
--#           = link_to edit_user_path(current_user)  do
--#             %i.fa.fa-cog
--#   .groups
--#     = link_to "https://chat-space-sample.herokuapp.com/groups/1037/messages"  do
--#       .group
--#         %p.group__group-name aooni
--#         %p.group__latest-message まだメッセージがありません
-
-
--# .form
--#     .form__new-message
--#       .input-box
--#         %input#message_content.input-box__text{name: "message[content]", placeholder: "type a message", type: "text"}/
--#         %label.input-box__image{for: "message_image"} 
--#           %i.fa.fa-image
--#         %label#input#message_image.input-box__image__file{name: "message[image]", type: "file"}/
--#       %input.submit-btn{"data-disable-with": "Send", name: "commit", type: "submit", value: "Send"}/
-
