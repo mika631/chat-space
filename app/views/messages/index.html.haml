@@ -12,18 +12,16 @@
         %li.main-header__left-box__member-list__member nike
     = link_to "/groups/1137/edit" do
       .main-header__edit-btn Edit
+
   .messages
-    .message
-      .message__update-info
-        %p.message__update-info__talker takeshi
-        %p.message__update-info__date 2019/09/09(fri)00:11:11
-      %p.message__text buruburu
+
+    = render @messages
+
   .form
-    .form__new-message
-      
+    = form_for [@group, @message] do |f|
       .input-box
-        %input#message_content.input-box__text{name: "message[content]", placeholder: "type a message", type: "text"}/
+        %input#message_content.input-box__text{name: "message[message]", placeholder: "type a message", type: "text"}/
         %label.input-box__image{for: "message_image"} 
           %i.fa.fa-image
         %label#input#message_image.input-box__image__file{name: "message[image]", type: "file"}/
-      %input.submit-btn{"data-disable-with": "Send", name: "commit", type: "submit", value: "Send"}/
+        %input.submit-btn{"data-disable-with": "Send", name: "commit", type: "submit", value: "Send"}/
