@@ -11,9 +11,10 @@
           = link_to edit_user_path(current_user)  do
             %i.fa.fa-cog
   .groups
-    .group
-      - current_user.groups.each do |group|
-        = link_to group_messages_path(current_user) do
+    - current_user.groups.each do |group|
+      = link_to group_messages_path(current_user) do
+        .group
           %p.group__group-name 
             =group.name
-          %p.group__latest-message まだメッセージがありません 
+          %p.group__latest-message
+            = group.show_last_message
