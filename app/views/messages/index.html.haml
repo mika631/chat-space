@@ -26,6 +26,5 @@
         %label.input-box__image{for: "message_image"} 
           %i.fa.fa-image
             =f.file_field :image, class: 'hidden' 
-        -# = f.file_field :image,id: "upload-icon"
         %label#input#message_image.input-box__image__file{name: "message[image]", type: "file"}/
         %input.submit-btn{"data-disable-with": "Send", name: "commit", type: "submit", value: "Send"}/
