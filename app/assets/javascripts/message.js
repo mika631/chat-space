@@ -35,7 +35,6 @@ $(function(){
       contentType: false
     })
     .done(function(data){
-      console.log(data)
       var html = buildHTML(data);
       $('.messages').append(html);  
       $('form')[0].reset();
