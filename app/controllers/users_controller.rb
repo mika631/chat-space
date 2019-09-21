@@ -13,10 +13,10 @@ class UsersController < ApplicationController
 
   def index
     group = Group.find(params[:group_id])
-    @member = group.users
-    member.each do |member_name|
-      puts member_name[:name]
-    end
+    @members = group.users
+    # member.each do |member_name|
+    #   puts member_name[:name]
+    # end
     respond_to do |format|
       format.html
       format.json
