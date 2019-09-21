@@ -1,5 +1,4 @@
 class UsersController < ApplicationController
-  
 
   def edit
   end
@@ -12,6 +11,15 @@ class UsersController < ApplicationController
     end
   end
 
+  def index
+    group = Group.find(params[:group_id])
+    @members = group.users
+    respond_to do |format|
+      format.html
+      format.json
+    end
+  end
+
   private
   
   # form_forを使用
@@ -19,3 +27,4 @@ class UsersController < ApplicationController
     params.require(:user).permit(:name, :email)
   end
 end
+
