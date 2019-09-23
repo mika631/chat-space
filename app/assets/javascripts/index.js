@@ -5,14 +5,14 @@ $(function(){
                   <div class="user-search-add chat-group-user__btn chat-group-user__btn--add" data-user-id="${ users.id }" data-user-name="${ users.name}">追加</div>
                 </div>`
                 return html;
-    }
+  };
 
-    function appendErrMsgToHTML(msg){
-      var html =`<div class="chat-group-user clearfix">
+  function buildHTML2(msg){
+    var htm = `<div class="chat-group-user clearfix">
                   <p class="chat-group-user__name">${ msg } </p>
                 </div>`
-    return html;
-    }
+                return htm;
+  };
 
   $("#user-search-field").on("keyup", function(){
     var input = $("#user-search-field").val();
@@ -24,24 +24,25 @@ $(function(){
     })
 
     .done(function(data){
-      $.each(data,function(i, data){
-      var html =buildHTML(data);
-        $('#user-search-result').append(html);
-        if(input == ""){
-          $(".chat-group-user").remove();
-          return false;
-        }
-        else{
-          appendErrMsgToHTML("一致するユーザーが見つかりません");
-          // console.log("OK")
-        }
-      })
+      $('#user-search-result').children().remove();
+      if(data.length !== 0)
+      $.each(data,function(i, data){ 
+      var html = buildHTML(data);
+      $('#user-search-result').append(html)
+      }
+      )
+      else {
+         msg = "一致するユーザーが見つかりません"
+         var htm = buildHTML2(msg)
+         $('#user-search-result').append(htm)
+      }
     })
-    console.log("OK")
+   
     .fail(function(){
       alert("ユーザー検索に失敗しました");
     })
     return false;
-
   })
 });
+
+

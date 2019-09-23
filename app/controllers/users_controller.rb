@@ -13,8 +13,6 @@ class UsersController < ApplicationController
 
   def index
     @users = User.where('name LIKE(?)', "%#{params[:keyword]}%").limit(10)
-    # group = Group.find(params[:group_id])
-    # @members = group.users
     respond_to do |format|
       format.html
       format.json
