@@ -12,8 +12,8 @@ class UsersController < ApplicationController
   end
 
   def index
-    group = Group.find(params[:group_id])
-    @members = group.users
+    @users = User.where('name LIKE(?)', "%#{params[:keyword]}%").where.not(id: current_user)
+    
     respond_to do |format|
       format.html
       format.json
