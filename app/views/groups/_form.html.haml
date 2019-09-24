@@ -16,7 +16,7 @@
     .chat-group-form__field--right
       .chat-group-form__search.clearfix
         %input#user-search-field.chat-group-form__input{placeholder: "追加したいユーザー名を入力してください", type: "text"}/
-      #user-search-result
+        #user-search-result
 
     / この部分はインクリメンタルサーチ（ユーザー追加の非同期化のときに使用します
   .chat-group-form__field.clearfix
@@ -28,6 +28,8 @@
           %input{name: "group[user_ids][]", type: "hidden", value:current_user.id }/
           %p.chat-group-user__name 
           = current_user.name
+        #chat-member-add
+
       - group.users.each do |member|
         - if member[:name] != current_user.name
           .chat-group-user
