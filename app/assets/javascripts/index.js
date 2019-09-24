@@ -65,7 +65,6 @@ $(function(){
     $(".chat-group-form__chatmember").val();
     var name = $(this).data('user-name');
     var id = $(this).data('user-id');
-    console.log(this)
     var ht = buildHTML3(name,id);
     $('#chat-member-add').append(ht)
     $(this).parent().remove();
