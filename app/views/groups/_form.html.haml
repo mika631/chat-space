@@ -31,7 +31,7 @@
         #chat-member-add
 
       - group.users.each do |member|
-        - if member[:name] != current_user.name
+        - if member[:id] != current_user.id
           .chat-group-user
             %input{name:"group[user_ids][]", type: "hidden", value: member[:id]}/
             .user-search-remove.chat-group-user__btn.chat-group-user__btn--remove.js-remove-btn 削除
