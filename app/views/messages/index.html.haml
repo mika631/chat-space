@@ -3,9 +3,9 @@
   = render 'shared/side_bar'
 
 .chat-main
-  .main-header
+  .main-header{ data: {id: @group.id }}
     .main-header__left-box
-      %h2.main-header__left-box__current-group 
+      %h2.main-header__left-box__current-group
         -Group.find(@group.id)
         = @group.name
         %ul.main-header__left-box__member-list
