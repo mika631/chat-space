@@ -1,4 +1,4 @@
-.message
+.message{ data: {id: message.id }}
   .message__update-info
     %p.message__update-info__talker
       = message.user.name
@@ -6,8 +6,8 @@
       = message.created_at.strftime("%Y/%m/%d %H:%M")
   .lowewr-message
     - if message.message.present?
-      %p.message__text 
-        = message.message
+      %p.message__text
+      = message.message
     = image_tag message.image.url, class: 'lower-message__image' if message.image.present?
 
 
