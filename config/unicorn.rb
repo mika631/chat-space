@@ -6,7 +6,7 @@ working_directory "#{app_path}/current"
 
 pid "#{app_path}/shared/tmp/pids/unicorn.pid"
 
-listen 3000
+listen "#{app_path}/tmp/sockets/unicorn.sock"
 
 stderr_path "#{app_path}/shared/log/unicorn.stderr.log"
 
