@@ -52,17 +52,17 @@ $(document).on('turbolinks:load',function(){
     })
     return false;
   })
-
-  $(document).on("click", ".user-search-add.chat-group-user__btn.chat-group-user__btn--add",function(){
-    $(".chat-group-form__chatmember").val();
-    var name = $(this).data('user-name');
-    var id = $(this).data('user-id');
-    var ht = buildHTML3(name,id);
-    $('#chat-member-add').append(ht)
-    $(this).parent().remove();
+  
+    $("#user-search-result").on("click", ".user-search-add",function(){
+      var name = $(this).data('user-name');
+      console.log(this)
+      var id = $(this).data('user-id');
+      var ht = buildHTML3(name,id);
+      $('#chat-member-add').append(ht)
+      $(this).parent().remove();
   })
 
-  $(document).on("click", ".user-search-remove.chat-group-user__btn.chat-group-user__btn--remove.js-remove-btn",function ()
+  $("chat-member-add").on("click", ".user-search-remove",function ()
   {
     $(this).parent().remove();
   })
