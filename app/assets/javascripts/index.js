@@ -53,6 +53,7 @@ $(document).on('turbolinks:load',function(){
     return false;
   })
   
+ 
     $("#user-search-result").on("click", ".user-search-add",function(){
       var name = $(this).data('user-name');
       console.log(this)
@@ -62,7 +63,7 @@ $(document).on('turbolinks:load',function(){
       $(this).parent().remove();
   })
 
-  $("chat-member-add").on("click", ".user-search-remove",function ()
+  $(document).on("click", ".user-search-remove.chat-group-user__btn.chat-group-user__btn--remove.js-remove-btn",function ()
   {
     $(this).parent().remove();
   })
