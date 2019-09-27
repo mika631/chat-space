@@ -9,7 +9,7 @@ $(document).on('turbolinks:load',function(){
                 ${message.user_name}
               </p>
               <p class="message__update-info__date">
-                ${message.data}
+                ${message.created_at}
               </p>
             </div>
             <div class="lowewr-message">
@@ -36,6 +36,7 @@ $(document).on('turbolinks:load',function(){
       contentType: false
     })
     .done(function(data){
+      console.log(data)
       var html = buildHTML(data);
       $('.messages').append(html);
       $('.messages').animate({scrollTop: $('.messages')[0].scrollHeight}, 'fast');    
@@ -64,6 +65,8 @@ $(document).on('turbolinks:load',function(){
         messages.forEach(function(message){
          insertHTML = buildHTML(message);
           $('.messages').append(insertHTML);
+          console.log(message)
+          $('.messages').animate({scrollTop: $('.messages')[0].scrollHeight}, 'fast'); 
         });
       })
       .fail(function() {
